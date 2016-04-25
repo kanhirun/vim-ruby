@@ -172,13 +172,13 @@ if !exists("g:no_plugin_maps") && !exists("g:no_ruby_maps")
   xnoremap <silent> <buffer> ]M :<C-U>call <SID>searchsyn('\<end\>','rubyDefine','','v')<CR>
 
   nnoremap <silent> <buffer> [[ :<C-U>call <SID>searchsyn('\<\%(class\<Bar>module\<Bar>describe\)\>','rubyDescribe\<Bar>rubyModule\<Bar>rubyClass','b','n')<CR>
-  nnoremap <silent> <buffer> ]] :<C-U>call <SID>searchsyn('\<\%(class\<Bar>module\)\>','rubyModule\<Bar>rubyClass','','n')<CR>
-  nnoremap <silent> <buffer> [] :<C-U>call <SID>searchsyn('\<end\>','rubyModule\<Bar>rubyClass','b','n')<CR>
-  nnoremap <silent> <buffer> ][ :<C-U>call <SID>searchsyn('\<end\>','rubyModule\<Bar>rubyClass','','n')<CR>
-  xnoremap <silent> <buffer> [[ :<C-U>call <SID>searchsyn('\<\%(class\<Bar>module\)\>','rubyModule\<Bar>rubyClass','b','v')<CR>
-  xnoremap <silent> <buffer> ]] :<C-U>call <SID>searchsyn('\<\%(class\<Bar>module\)\>','rubyModule\<Bar>rubyClass','','v')<CR>
-  xnoremap <silent> <buffer> [] :<C-U>call <SID>searchsyn('\<end\>','rubyModule\<Bar>rubyClass','b','v')<CR>
-  xnoremap <silent> <buffer> ][ :<C-U>call <SID>searchsyn('\<end\>','rubyModule\<Bar>rubyClass','','v')<CR>
+  nnoremap <silent> <buffer> ]] :<C-U>call <SID>searchsyn('\<\%(class\<Bar>module\<Bar>describe\)\>','rubyDescribe\<Bar>rubyModule\<Bar>rubyClass','','n')<CR>
+  nnoremap <silent> <buffer> [] :<C-U>call <SID>searchsyn('\<end\>','rubyDescribe\<Bar>rubyModule\<Bar>rubyClass','b','n')<CR>
+  nnoremap <silent> <buffer> ][ :<C-U>call <SID>searchsyn('\<end\>','rubyDescribe\<Bar>rubyModule\<Bar>rubyClass','','n')<CR>
+  xnoremap <silent> <buffer> [[ :<C-U>call <SID>searchsyn('\<\%(class\<Bar>module\<Bar>describe\)\>','rubyDescribe\<Bar>rubyModule\<Bar>rubyClass','b','v')<CR>
+  xnoremap <silent> <buffer> ]] :<C-U>call <SID>searchsyn('\<\%(class\<Bar>module\<Bar>describe\)\>','rubyDescribe\<Bar>rubyModule\<Bar>rubyClass','','v')<CR>
+  xnoremap <silent> <buffer> [] :<C-U>call <SID>searchsyn('\<end\>','rubyDescribe\<Bar>rubyModule\<Bar>rubyClass','b','v')<CR>
+  xnoremap <silent> <buffer> ][ :<C-U>call <SID>searchsyn('\<end\>','rubyDescribe\<Bar>rubyModule\<Bar>rubyClass','','v')<CR>
 
   let b:undo_ftplugin = b:undo_ftplugin
         \."| sil! exe 'unmap <buffer> [[' | sil! exe 'unmap <buffer> ]]' | sil! exe 'unmap <buffer> []' | sil! exe 'unmap <buffer> ]['"
