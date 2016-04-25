@@ -225,10 +225,12 @@ if !exists("b:ruby_no_expensive") && !exists("ruby_no_expensive")
   syn match  rubyDefine "\<undef\>"  nextgroup=rubyFunction	     skipwhite skipnl
   syn match  rubyClass	"\<class\>"  nextgroup=rubyClassDeclaration  skipwhite skipnl
   syn match  rubyModule "\<module\>" nextgroup=rubyModuleDeclaration skipwhite skipnl
+  syn match  rubyDescribe "\<describe\>" skipwhite skipnl
 
   syn region rubyMethodBlock start="\<def\>"	matchgroup=rubyDefine end="\%(\<def\_s\+\)\@<!\<end\>" contains=ALLBUT,@rubyNotTop fold
   syn region rubyBlock	     start="\<class\>"	matchgroup=rubyClass  end="\<end\>"		       contains=ALLBUT,@rubyNotTop fold
   syn region rubyBlock	     start="\<module\>" matchgroup=rubyModule end="\<end\>"		       contains=ALLBUT,@rubyNotTop fold
+  syn region rubyBlock	     start="\<describe\>" matchgroup=rubyDescribe end="\<end\>"		       contains=ALLBUT,@rubyNotTop fold
 
   " modifiers
   syn match rubyConditionalModifier "\<\%(if\|unless\)\>"    display
@@ -319,6 +321,7 @@ syn region rubyData matchgroup=rubyDataDirective start="^__END__$" end="\%$" fol
 
 hi def link rubyClass			rubyDefine
 hi def link rubyModule			rubyDefine
+hi def link rubyDescribe		rubyDefine
 hi def link rubyMethodExceptional	rubyDefine
 hi def link rubyDefine			Define
 hi def link rubyFunction		Function
